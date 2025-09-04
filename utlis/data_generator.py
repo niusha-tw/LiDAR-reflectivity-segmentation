@@ -45,8 +45,8 @@ def convert_ply2bin(bin_path):
     #plydata = pr.open(ply_path)
     #vertex =plydata['vertex']
     #print('lol')
-    points = load_bin('/home/usl/Desktop/intensity_salsa/Rellis_3D_os1_cloud_node_kitti_bin/Rellis-3D/'+dir_index+'/os1_cloud_node_kitti_bin/'+bin_path)
-    labels = np.fromfile('/home/usl/Desktop/intensity_salsa/Rellis_3D_os1_cloud_node_semantickitti_label_id_20210614/Rellis-3D/'+dir_index+'/os1_cloud_node_semantickitti_label_id/'+bin_path[:-3]+'label',dtype = np.int32,count = -1)
+    points = load_bin('/home/usl/Desktop/Rellis_3D_os1_cloud_node_kitti_bin/Rellis-3D/'+dir_index+'/os1_cloud_node_kitti_bin/'+bin_path)
+    labels = np.fromfile('/home/usl/Desktop/Rellis_3D_os1_cloud_node_semantickitti_label_id_20210614/Rellis-3D/'+dir_index+'/os1_cloud_node_semantickitti_label_id/'+bin_path[:-3]+'label',dtype = np.int32,count = -1)
     pc = open3d.geometry.PointCloud()
     x,y,z,ins= points[:,0],points[:,1],points[:,2],(points[:,3]*65535).astype(np.int16)
     rang = np.sqrt(x**2+y**2+z**2)
